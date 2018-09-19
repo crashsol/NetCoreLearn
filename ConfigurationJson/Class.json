@@ -1,0 +1,16 @@
+﻿{
+
+  "ClassNo": "1",
+  "ClassDesc": "123",
+  "Students": [
+    {
+      "name": "Crashsol",
+      "age": "30"
+    },
+    {
+      "name": "Sugar",
+      "age": "30"
+    }
+  ]
+
+}

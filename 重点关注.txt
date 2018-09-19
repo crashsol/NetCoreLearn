@@ -1,0 +1,1 @@
+1、 Api在验证AccessToken时，第一次会想IdentityServer请求一次，获取秘钥，后续的AccessToken验证，就直接在本地完成。

@@ -1,0 +1,24 @@
+﻿一、添加IdentityServer 相关依赖
+1、添加 IdentityServer4.AspNetIdentity   用于存储 用户数据 
+2、添加 IdentityServer4.EntityFramework  用户存储 ApiResource、IdentityResource、Clients
+
+二、添加IdentityService 数据库
+1、添加EntityFrameworkCore.Tools.DotNet 依赖
+<ItemGroup>
+  <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
+</ItemGroup>
+
+2、添加数据库DbContext（2选一）
+当前项目，控制台中输入
+dotnet ef migrations add InitialIdentityServerPersistedGrantDbMigration -c PersistedGrantDbContext -o Data/Migrations/IdentityServer/PersistedGrantDb
+dotnet ef migrations add InitialIdentityServerConfigurationDbMigration -c ConfigurationDbContext -o Data/Migrations/IdentityServer/ConfigurationDb
+
+包控制器中输入
+Add-Migration InitialIdentityServerPersistedGrantDbMigration -c PersistedGrantDbContext -o Data/Migrations/IdentityServer/PersistedGrantDb
+Add-Migration InitialIdentityServerConfigurationDbMigration -c ConfigurationDbContext -o Data/Migrations/IdentityServer/ConfigurationDb
+
+*****在创建数据库的时候： 
+要首选创建 AspIdentity ,使用 Update-Database -c ApplicationDbContext ,
+
+然后在执行 Update-Database -c PersistedGrantDbContext  Update-Database -c ConfigurationDbContext 
+

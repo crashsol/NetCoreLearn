@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DB.Interface\**" />
+    <Compile Remove="DB.Mysql\**" />
+    <Compile Remove="DB.Oracle\**" />
+    <Compile Remove="DB.Sqlserver\**" />
+    <EmbeddedResource Remove="DB.Interface\**" />
+    <EmbeddedResource Remove="DB.Mysql\**" />
+    <EmbeddedResource Remove="DB.Oracle\**" />
+    <EmbeddedResource Remove="DB.Sqlserver\**" />
+    <None Remove="DB.Interface\**" />
+    <None Remove="DB.Mysql\**" />
+    <None Remove="DB.Oracle\**" />
+    <None Remove="DB.Sqlserver\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="DB.Interface\DB.Interface.csproj" />
+    <ProjectReference Include="DB.Mysql\DB.Mysql.csproj" />
+    <ProjectReference Include="DB.Oracle\DB.Oracle.csproj" />
+    <ProjectReference Include="DB.Sqlserver\DB.Sqlserver.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

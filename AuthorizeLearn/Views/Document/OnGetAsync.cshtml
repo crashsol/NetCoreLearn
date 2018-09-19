@@ -1,0 +1,28 @@
+﻿@model AuthorizeLearn.Models.Document
+@{
+    ViewData["Title"] = "OnGetAsync";
+}
+
+<h2>获得Document</h2>
+
+<h2>@Model.Author</h2>
+<h2>@Model.Title</h2>
+<h2>可以访问该资源的 部门 列表</h2>
+<ul>
+
+    @foreach (var item in Model.Departments)
+    {
+        <li>@item</li>
+    }
+</ul>
+
+<hr />
+<h2>可以访问该资源的 人员 列表</h2>
+<ul>
+
+    @foreach (var item in Model.AllowUsers)
+    {
+        <li>@item</li>
+    }
+</ul>
+

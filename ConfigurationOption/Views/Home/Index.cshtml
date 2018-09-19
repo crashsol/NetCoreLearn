@@ -1,0 +1,23 @@
+﻿
+@using Microsoft.Extensions.Options
+@inject IOptionsSnapshot<ConfigurationOption.Options.Class> myClass
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3>@myClass.Value.ClassNo</h3>
+<h4>@myClass.Value.ClassDesc</h4>
+<table>
+   
+    @foreach (var item in myClass.Value.Students)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Age</td>
+        </tr>           
+            
+    }
+
+</table>
+
