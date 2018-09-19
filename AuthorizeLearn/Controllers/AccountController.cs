@@ -36,6 +36,8 @@ namespace AuthorizeLearn.Controllers
                 new Claim("Permission","User_List"),
                 new Claim(ClaimTypes.DateOfBirth,"2000-01-01")            
 
+
+
             };
             var ClaimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme); //链式identity
             var principal = new ClaimsPrincipal(ClaimsIdentity);
